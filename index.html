@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Application information for ERPSAIJING, an internal integration tool under development for authorized Allegro seller accounts.">
+  <meta name="description" content="Application information for ERPSAIJING, an internal integration tool under development for authorized Allegro and Yahoo! Shopping seller accounts.">
   <meta name="theme-color" content="#ffffff">
   <title>ERPSAIJING — Application information</title>
   <link rel="canonical" href="https://sailout-storage.github.io/erpsaijing-app-info/">
@@ -52,7 +52,7 @@ a:active { transform: scale(.97); }
 a:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; border-radius: 2px; }
 .wordmark { color: var(--ink); font-size: 18px; font-weight: 760; letter-spacing: -.6px; text-decoration: none; }
 .wordmark span { color: var(--blue); }
-nav { display: flex; gap: 26px; font-size: 14px; }
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 26px; font-size: 14px; }
 .intro { display: grid; grid-template-columns: 1fr 230px; gap: 48px; padding: 76px 0 60px; border-bottom: 2px solid var(--ink); align-items: end; }
 .eyebrow { color: var(--blue); text-transform: uppercase; letter-spacing: 2.3px; font-size: 11px; font-weight: 700; margin: 0 0 20px; }
 h1 { font-size: clamp(38px, 6vw, 74px); line-height: 1.05; font-weight: 650; letter-spacing: -.055em; margin: 0 0 22px; }
@@ -112,14 +112,14 @@ footer { animation-delay: 100ms; }
   <div class="page">
     <header>
       <a class="wordmark" href="#main" aria-label="ERPSAIJING application information">ERP<span>SAIJING</span></a>
-      <nav aria-label="Page sections"><a href="#english" lang="en">English</a><a href="#chinese" lang="zh-CN">中文说明</a></nav>
+      <nav aria-label="Page sections"><a href="#english" lang="en">English</a><a href="#yahoo-shopping">Yahoo! Shopping</a><a href="#chinese" lang="zh-CN">中文说明</a></nav>
     </header>
     <main id="main">
       <section class="intro" aria-labelledby="app-name">
         <div>
           <p class="eyebrow">Application information</p>
           <h1 id="app-name">ERPSAIJING</h1>
-          <p class="tagline">Internal Allegro data integration</p>
+          <p class="tagline">Internal Allegro &amp; Yahoo! Shopping data integration</p>
         </div>
         <dl class="facts">
           <div><dt>Application version</dt><dd>1.0.0</dd></div>
@@ -130,12 +130,12 @@ footer { animation-delay: 100ms; }
       <section id="english" class="content-section" aria-labelledby="overview-title">
         <div class="section-label"><span>01</span><h2 id="overview-title">Overview</h2></div>
         <div class="section-content">
-          <p class="lead">ERPSAIJING is an internal integration tool under development for our company’s authorized Allegro seller accounts.</p>
+          <p class="lead">ERPSAIJING is an internal integration tool under development for our company’s authorized Allegro and Yahoo! Shopping seller accounts.</p>
           <p>It is intended to retrieve orders, offer and product information, and account billing data through the Allegro REST API to support operational reporting and business analysis. Actual access depends on the permissions granted by each seller account and the API resources available.</p>
         </div>
       </section>
       <section class="content-section" aria-labelledby="scope-title">
-        <div class="section-label"><span>02</span><h2 id="scope-title">Intended data scope</h2></div>
+        <div class="section-label"><span>02</span><h2 id="scope-title">Allegro data scope</h2></div>
         <div class="section-content scope-list">
           <div><h3>Orders</h3><p>Authorized order records for sales reporting and operational analysis.</p></div>
           <div><h3>Offers &amp; products</h3><p>Seller offer and related product information for internal reporting.</p></div>
@@ -143,23 +143,35 @@ footer { animation-delay: 100ms; }
         </div>
       </section>
       <section class="content-section" aria-labelledby="access-title">
-        <div class="section-label"><span>03</span><h2 id="access-title">Authorization &amp; use</h2></div>
+        <div class="section-label"><span>03</span><h2 id="access-title">Allegro authorization &amp; use</h2></div>
         <div class="section-content">
           <p>The intended integration uses seller consent through Allegro OAuth and read permissions appropriate to these reporting needs. It is designed for the company’s own authorized accounts and internal use.</p>
           <p>This page documents the application’s purpose. It does not provide a seller login, collect API credentials, or display shop data. It does not claim that the integration is live or certified by Allegro.</p>
         </div>
       </section>
+      <section id="yahoo-shopping" class="content-section" aria-labelledby="yahoo-title">
+        <div class="section-label"><span>04</span><h2 id="yahoo-title">Yahoo! Shopping<br><span lang="ja">Yahoo!ショッピング</span></h2></div>
+        <div class="section-content">
+          <p class="lead">The planned Yahoo! Shopping integration will retrieve our company’s authorized store orders, product information, and inventory for internal sales reporting and operational analysis.</p>
+          <p>Access will use the official Yahoo! Shopping APIs and Yahoo! JAPAN ID authorization linked to the store’s registered Business ID. Production order API access is subject to a separate application and approval. Available data depends on the store permissions and API resources approved by the platform.</p>
+          <p>This is a planned integration. It does not claim that Yahoo! Shopping access has been approved, that data is already being retrieved, or that the application is certified by Yahoo! JAPAN. The intended use is to read store data for internal reporting, without changing orders, products, or stock.</p>
+          <p lang="ja"><strong>日本語：</strong>ERPSAIJING は、自社の認可済み Yahoo!ショッピングストアの注文・商品・在庫情報を取得し、社内の売上集計と業務分析に利用するために開発中のアプリケーションです。公式 API とストアに紐づいた Yahoo! JAPAN ID の認可を利用する予定です。本番の注文 API は別途利用申請と承認が必要で、取得できる情報はストアの権限および承認された API の範囲に従います。現在、Yahoo!ショッピングへの接続完了や審査承認を示すものではありません。本ページではログイン情報や API 認証情報を収集せず、ストアの業務データも公開しません。</p>
+        </div>
+      </section>
       <section id="chinese" class="content-section chinese" lang="zh-CN" aria-labelledby="chinese-title">
-        <div class="section-label"><span>04</span><h2 id="chinese-title">中文说明</h2></div>
+        <div class="section-label"><span>05</span><h2 id="chinese-title">中文说明</h2></div>
         <div class="section-content">
           <p class="lead">ERPSAIJING 是公司正在开发的内部数据集成工具，面向公司已授权的 Allegro 店铺账号。</p>
           <p>应用计划通过 Allegro REST API 读取订单、商品与刊登信息、账户费用数据，用于运营报表和经营分析。实际可读取的数据，以店铺授予的权限及平台开放的接口为准。</p>
           <p>应用拟通过 Allegro OAuth 获取店铺授权，按内部报表需求使用读取权限。本页面仅提供应用用途说明，不收集账号密码或 API 密钥，也不展示店铺业务数据。</p>
           <p>当前处于开发阶段，本说明不代表已完成平台接入、已实现向领星 ERP 写入数据，或已获得 Allegro 官方认证。</p>
+          <p>Yahoo! Shopping 接入计划读取公司已授权店铺的订单、商品和库存信息，用于内部销售报表与运营分析，不修改订单、商品或库存。</p>
+          <p>该接入拟使用 Yahoo! Shopping 官方 API，以及与店铺已登记 Business ID 关联的 Yahoo! JAPAN ID 完成授权。正式环境订单 API 须另行申请并获得批准，实际数据范围以店铺权限及平台批准的接口为准。</p>
+          <p>Yahoo! Shopping 接入仍处于计划阶段，本说明不代表已经取得接口批准、已经读取到店铺数据或获得平台认证。说明页不收集登录信息或 API 凭据，也不公开店铺业务数据。</p>
         </div>
       </section>
     </main>
-    <footer><span>ERPSAIJING · Application documentation</span><span>Updated <time datetime="2026-10-23">23 October 2026</time></span></footer>
+    <footer><span>ERPSAIJING · Application documentation</span><span>Updated <time datetime="2026-10-26">26 October 2026</time></span></footer>
   </div>
 </body>
 </html>
